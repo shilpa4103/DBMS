@@ -1,6 +1,7 @@
 use org;
 select * from worker;
 select * from bonus;
+select * from title;
 
 -- Q-31. Write an SQL query to show the current date and time.
 -- DUAL
