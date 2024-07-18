@@ -20,9 +20,14 @@ select w1.first_name,w1.department,w1.salary from worker w1 join(select departme
 
 -- Q-46. Write an SQL query to fetch three max salaries from a table using co-related subquery
 select distinct salary from worker order by salary desc limit 3;
+-- or
+select distinct salary from worker w1 where 3 >= (select count(distinct salary) from worker w2 where w1.salary <= w2.salary) order by w1.salary desc;
 
 -- Q-47. Write an SQL query to fetch three min salaries from a table using co-related subquery
 select distinct salary from worker order by salary limit 3;
+-- or
+select distinct salary from worker w1 where 3 >= (select count(distinct salary) from worker w2 where w1.salary >= w2.salary) order by w1.salary desc;
+
 
 -- Q-48. Write an SQL query to fetch nth max salaries from a table.
 select distinct salary from worker w1
